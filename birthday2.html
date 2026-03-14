@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Birthday Surprise</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:#ff9a9e;
+    font-family:Arial;
+    overflow:hidden;
+}
+
+h1{
+    color:white;
+    font-size:50px;
+    text-align:center;
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+#message{
+    display:none;
+    font-size:35px;
+    color:white;
+    margin-top:20px;
+    animation: fade 2s;
+}
+
+#final{
+    display:none;
+    font-size:30px;
+    color:yellow;
+    margin-top:20px;
+}
+
+@keyframes fade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+.heart{
+    position:absolute;
+    color:red;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-100px);}
+    100%{transform:translateY(100vh);}
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🎉 Happy Birthday My Yazhini🎉</h1>
+
+<button onclick="showMessage()">Click Here</button>
+
+<div id="message">❤️ You Are Special and I love you so much🥰😉 ❤️</div>
+
+<div id="final">✨ The End ✨</div>
+
+<script>
+
+function showMessage(){
+document.getElementById("message").style.display="block";
+
+for(let i=0;i<30;i++){
+let heart=document.createElement("div");
+heart.innerHTML="❤️";
+heart.className="heart";
+heart.style.left=Math.random()*100+"%";
+heart.style.fontSize=(10+Math.random()*30)+"px";
+document.body.appendChild(heart);
+}
+
+setTimeout(()=>{
+document.getElementById("final").style.display="block";
+},4000);
+
+}
+
+</script>
+
+</body>
+</html>
